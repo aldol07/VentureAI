@@ -1,0 +1,205 @@
+# ===========================
+# VenturePilot .gitignore
+# ===========================
+
+# ===========================
+# Environment & Secrets
+# ===========================
+.env
+.env.local
+.env.*.local
+*.env
+secrets.json
+credentials.json
+config.local.py
+
+# ===========================
+# Python
+# ===========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# ===========================
+# Virtual Environments
+# ===========================
+venv/
+ENV/
+env/
+.venv/
+.ENV/
+env.bak/
+venv.bak/
+pythonenv*/
+.conda/
+conda-env/
+
+# ===========================
+# IDE & Editors
+# ===========================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm / JetBrains
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# ===========================
+# OS Generated
+# ===========================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===========================
+# Project Specific
+# ===========================
+# Generated outputs
+outputs/
+output/
+generated/
+exports/
+
+# Session data
+session_data.json
+*.session
+
+# Logs
+logs/
+*.log
+log.txt
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Jupyter Notebooks (if any)
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ===========================
+# Data & Models
+# ===========================
+*.csv
+*.xlsx
+*.xls
+data/
+datasets/
+models/
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.model
+
+# ===========================
+# Documentation Build
+# ===========================
+docs/_build/
+site/
+
+# ===========================
+# Misc
+# ===========================
+*.bak
+*.orig
+*.rej
+.history/
+.ionide/
