@@ -1,7 +1,3 @@
-"""
-Mentor Engine - Generates intelligent follow-up questions and provides feedback.
-Features age-adaptive mentoring based on student class level.
-"""
 
 from typing import List, Dict
 from utils.llm_client import get_llm_client
@@ -10,7 +6,6 @@ from utils.llm_client import get_llm_client
 class MentorEngine:
     """Handles age-adaptive mentor Q&A sessions."""
     
-    # Age-adaptive question styles
     AGE_PROFILES = {
         "junior": {  # Class 6-7
             "grades": [6, 7],

@@ -1,12 +1,3 @@
-"""
-Idea Refiner - Transforms raw startup ideas into structured plans.
-Features:
-- Age-adaptive intelligence based on student class level
-- Reality Simplifier guardrail for unrealistic ideas
-- Pivot Suggestion Engine for backup directions
-- Timeline Visualizer for idea-to-demo journey
-"""
-
 from utils.llm_client import get_llm_client
 from core.scoring_engine import ScoringEngine
 
@@ -14,7 +5,7 @@ from core.scoring_engine import ScoringEngine
 class IdeaRefiner:
     """Refines raw startup ideas with age-adaptive output and reality checks."""
     
-    # Age-adaptive configurations
+    
     AGE_PROFILES = {
         "junior": {  # Class 6-7
             "grades": [6, 7],

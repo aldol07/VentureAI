@@ -1,7 +1,4 @@
-"""
-Web Generator - Generates HTML landing pages for App/Website ideas.
-Features age-adaptive complexity in generated code.
-"""
+
 
 from utils.llm_client import get_llm_client
 

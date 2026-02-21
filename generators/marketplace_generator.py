@@ -1,7 +1,3 @@
-"""
-Marketplace Generator - Generates complete marketplace prototype.
-Features age-adaptive complexity in all outputs.
-"""
 
 from utils.llm_client import get_llm_client
 

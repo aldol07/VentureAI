@@ -1,7 +1,3 @@
-"""
-Scoring Engine - Calculates startup readiness scores.
-Features age-adaptive scoring criteria based on student class level.
-"""
 
 from utils.llm_client import get_llm_client
 
@@ -176,7 +172,6 @@ Provide scores and brief explanations in JSON format."""
         feasibility = result.get("feasibility", 5)
         innovation = result.get("innovation", 5)
         
-        # Weighted average (feasibility weighted higher for students)
         overall = round((clarity * 0.3 + feasibility * 0.4 + innovation * 0.3), 1)
         
         return {

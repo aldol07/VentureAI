@@ -1,8 +1,4 @@
-"""
-LLM Client - Centralized LangChain + OpenRouter wrapper.
-All AI calls go through this module.
-Uses OpenRouter API for access to multiple models including DeepSeek.
-"""
+
 
 import os
 import json
@@ -14,7 +10,6 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
-# Load environment variables
 load_dotenv()
 
 
@@ -26,7 +21,6 @@ class LLMClient:
         if not api_key:
             raise ValueError("OPENROUTER_API_KEY not found in environment variables")
         
-        # Initialize OpenRouter via LangChain's ChatOpenAI
         self.llm = ChatOpenAI(
             model="deepseek/deepseek-r1",
             api_key=api_key,
@@ -50,7 +44,6 @@ class LLMClient:
         Generate a structured JSON response.
         Handles DeepSeek R1's thinking tags and extracts clean JSON.
         """
-        # Build the prompt template
         prompt = ChatPromptTemplate.from_messages([
             SystemMessagePromptTemplate.from_template(
                 "{system_prompt}\n\nCRITICAL: Respond with valid JSON only. No markdown, no code blocks, no explanations outside the JSON."
@@ -58,17 +51,16 @@ class LLMClient:
             HumanMessagePromptTemplate.from_template("{user_prompt}")
         ])
         
-        # Create the chain with temperature
         llm_with_temp = self.llm.bind(temperature=temperature)
         chain = prompt | llm_with_temp | self.str_parser
         
-        # Execute
+        
         result = chain.invoke({
             "system_prompt": system_prompt,
             "user_prompt": user_prompt
         })
         
-        # Clean and parse JSON
+       
         return self._parse_json(result)
     
     def generate_text(
@@ -166,8 +158,6 @@ class LLMClient:
         
         text = text.strip()
         
-        # Try to find JSON object in the text
-        # Look for the outermost { }
         start_idx = text.find('{')
         end_idx = text.rfind('}')
         
@@ -178,7 +168,6 @@ class LLMClient:
             except json.JSONDecodeError:
                 pass
         
-        # Try parsing the whole text
         try:
             return json.loads(text)
         except json.JSONDecodeError as e:

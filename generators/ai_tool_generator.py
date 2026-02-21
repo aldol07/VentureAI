@@ -1,7 +1,3 @@
-"""
-AI Tool Generator - Generates prompt logic and Streamlit demo.
-Features age-adaptive complexity in generated code and prompts.
-"""
 
 from utils.llm_client import get_llm_client
 
